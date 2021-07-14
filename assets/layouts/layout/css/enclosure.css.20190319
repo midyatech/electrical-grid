@@ -1,0 +1,154 @@
+.meter-img {
+    width:100%;
+    max-width: 150px;
+    display:block;
+    margin:auto;
+}
+.enclosure{
+    border: 2px solid #666;
+    border-radius: 15px !important;
+}
+.col{
+    padding-right:100px;
+    padding-left:100px;
+}
+.chat-form{
+    background-color: #ccc !important;
+}
+.chat-form.option2{
+    background-color: #fff !important;
+    border: 1px solid #ccc;
+}
+.mt-widget-3{
+    background-color:#fff;
+}
+.mt-widget-3 .mt-head{
+    margin-bottom: 0;
+}
+.mt-widget-3 .mt-head .mt-head-button{
+    padding: 0;
+}
+.form-control{
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.col-8{
+    width: 12.5%;
+    float: left;
+    padding: 0 10px;
+}
+.mt-body-actions-icons{
+    padding: 0 20px;
+}
+.well{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.less-padding {
+    padding: 2px !important;
+    margin: 2px !important;
+}
+.mt-action-buttons .btn {
+    padding: 6px 2px;
+}
+.mt-widget-3 {
+    border-color: #ccc !important;
+}
+.chat-form {
+    margin-top:0px;
+}
+.switch-container {
+    margin: 20px 0;
+}
+.row.meters .meter {
+    padding: 20px 35px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.sliderControl {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    margin: 10px 0;
+}
+
+.sliderControl:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #36a3f7;
+    -webkit-transition: .4s;
+    transition: .4s;
+    top: -6px;
+}
+
+.switch.disabled .sliderControl {
+    opacity: .4;
+}
+
+
+input:checked + .sliderControl {
+    background-color: #c4c5d6;
+}
+
+input:focus + .sliderControl {
+    box-shadow: 0 0 4px 1px #2196F3;
+    /*border: solid 1px #2196F3;*/
+}
+
+input[type=text]:focus, .save_enclosure:focus{
+    box-shadow: 0 0 4px 1px #2196F3 !important;
+}
+
+input:checked + .sliderControl:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliderControls */
+.sliderControl.round {
+    border-radius: 34px !important;
+}
+
+.sliderControl.round:before {
+    border-radius: 50%;
+
+    }
+.meter-count .btn {
+    margin: 1%;
+    width: 30%;
+}
+.mt-widget-3 .mt-head .mt-head-button {
+    color: #888;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+.mt-widget-3 .mt-head {
+    padding: 10px 0 0 0;
+}
+.meter-count .btn-default.active{
+    border-color: #2196F3 !important;
+    background-color: #36a3f7 !important;
+}

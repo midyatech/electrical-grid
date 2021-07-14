@@ -1,0 +1,17 @@
+{
+    "sProcessing":   "جاري التحميل...",
+    "sLengthMenu":   "&nbsp;_MENU_ ",
+    "sZeroRecords":  "لم يُعثر على أية سجلات",
+    "sInfo":         "إظهار _START_ إلى _END_ من أصل _TOTAL_",
+    "sInfoEmpty":    "لا يوجد بيانات للعرض",
+    "sInfoFiltered": "(منتقاة من مجموع _MAX_ مُدخل)",
+    "sInfoPostFix":  "",
+    "sSearch":       "ابحث:",
+    "sUrl":          "",
+    "oPaginate": {
+        "sFirst":    "الأول",
+        "sPrevious": "السابق",
+        "sNext":     "التالي",
+        "sLast":     "الأخير"
+    }
+}

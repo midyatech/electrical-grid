@@ -1,0 +1,13 @@
+.dropdown-menu .wysihtml5-colors-title
+{
+    display: none !important;
+}
+ul.wysihtml5-toolbar div.wysihtml5-colors{
+    width:100% !important
+}
+ul.wysihtml5-toolbar > li{
+    margin: 0 5px 5px 0 !important;
+}
+.wysihtml5-toolbar .btn {
+    padding: 6px 6px !important;
+}
