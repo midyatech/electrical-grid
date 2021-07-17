@@ -68,7 +68,6 @@ if ($meter_type_id ==1 && $no_of_meter > 3) {
 
 function DrawEnclosure($enclosure_type, $gateway, $meters_config, $meter_type_id)
 {
-    print $meter_type_id;
     $meters = str_split($meters_config);
     $meters_count = count($meters);
     if ($meter_type_id == 1) {
@@ -130,7 +129,9 @@ function DrawEnclosure($enclosure_type, $gateway, $meters_config, $meter_type_id
     <?php
         if( $remaining_enclosure > 0  || $user_task || $is_extra_stock == 1) {
             if ($enclosure || $is_extra_stock == 1) {
-                echo "<h3 class='col-lg-6 col-md-offset-0 col-lg-offset-3'>".$enclosure[0]["team_name"]." \ ".$enclosure[0]["NAME"]."</h3>";
+                if ($enclosure[0]["team_name"] != "") {
+                    echo "<h3 class='col-lg-6 col-md-offset-0 col-lg-offset-3'>".$enclosure[0]["team_name"]." \ ".$enclosure[0]["NAME"]."</h3>";
+                }
             ?>
                 <div class="well col-lg-6 col-md-offset-0 col-lg-offset-3">
                     <?php

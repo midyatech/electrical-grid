@@ -1,7 +1,6 @@
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 include_once realpath(__DIR__ . '/../..').'/include/settings.php';
 include_once realpath(__DIR__ . '/../..').'/include/checksession.php';
 //include_once realpath(__DIR__ . '/../..').'/include/checkpermission.php';
@@ -236,11 +235,11 @@ if (isset($id)) {
             <div class="tab-pane" id="iccid_list">
                 <?php
                 $wactions = array (
-                    array("type"=>"literal", "value"=>'<a href="ui/assembly.iccid.export.php?id='.$id.'" class="btn green" target="blank"><i class="fa fa-file-excel-o"></i></a>')
+                    array("type"=>"literal", 'name'=>'', 'list'=>null, 'options'=>null, "value"=>'<a href="ui/assembly.iccid.export.php?id='.$id.'" class="btn green" target="blank"><i class="fa fa-file-excel-o"></i></a>')
                 );
 
                 if ($user-> CheckPermission($USERID, "permission_activate_simcards") == 1) {
-                    $wactions[] = array ( "type"=>"button", "name"=>$dictionary->GetValue('change_simcard_status'), "value"=>$dictionary->GetValue('change_simcard_status'), "", "options"=>array ("class" => "btn green btn-sm change_gateway_status", "icon"=>"fa fa-pencil"));
+                    $wactions[] = array ( "type"=>"button", "name"=>$dictionary->GetValue('change_simcard_status'), "value"=>$dictionary->GetValue('change_simcard_status'), 'list'=>null, "options"=>array ("class" => "btn green btn-sm change_gateway_status", "icon"=>"fa fa-pencil"));
                 }
 
 
@@ -263,7 +262,9 @@ if (isset($id)) {
                         $cols[] = array("column"=>"activation_date");
                         $cols[] = array("column"=>"simcard_status");
 
-                        $html->Table($data, $cols, $tableoptions);
+                        if ($data) {
+                            $html->Table($data, $cols, $tableoptions);
+                        }
                     }
                     $html->CloseSpan();
                 }

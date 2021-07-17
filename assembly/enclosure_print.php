@@ -16,6 +16,8 @@ if (isset($_GET["id"]) && $_GET["id"] != ""){
     $enclosure_id = $_GET["id"];
 }
 
+$remaining_enclosure = 1000; //infinity, in case we didn't get the actual number
+
 if (isset($_GET["aoid"]) && isset($_GET["ecid"]) && isset($_GET["tid"])){
     $manually = true;
     $aoid=$_GET["aoid"];
@@ -24,6 +26,7 @@ if (isset($_GET["aoid"]) && isset($_GET["ecid"]) && isset($_GET["tid"])){
     $id=$_GET["id"];
 
     $remaining_filter = [$aoid, $tid, $ecid];
+    //print_r($remaining_filter);
     $remaining_enclosure = $Enclosure->GetTransformerRemainingEnclosureCount($remaining_filter);
 }
 

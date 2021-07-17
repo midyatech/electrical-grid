@@ -24,6 +24,7 @@ if (isset($aoid)) {
 }
 
 if (isset($id)) {
+    $order = $assembly->GetAssemblyOrder($assembly_id);
     $Transfomer = $assembly->getAssemblyOrderConfigByTransfomer($assembly_id, null, $transformer_id);
     $Enclosures = $assembly->getEnclosuresByTransformer($assembly_id, $transformer_id);
 
@@ -69,8 +70,12 @@ if (isset($id)) {
                         )
                     );
 
-        echo '<h3>Feeder : <b>'.$Transfomer[0]["feeder"].'</b></h3>';
-        echo '<h3>Transfomer : <b>'.$Transfomer[0]["transformer_number"].' ['.$Transfomer[0]["transformer_generated_number"].']</b></h3>';
+        if ($order[0]["is_extra_stock"] == 1) {
+            echo '<h3>Assembly Order: <b>'.$order[0]["assembly_order_code"].'</b></h3>';
+        } else {
+            echo '<h3>Feeder : <b>'.$Transfomer[0]["feeder"].'</b></h3>';
+            echo '<h3>Transfomer : <b>'.$Transfomer[0]["transformer_number"].' ['.$Transfomer[0]["transformer_generated_number"].']</b></h3>';
+        }
 
         $tableOptions = array();
         $tableOptions["key"]= ["enclosure_config_id"=>"enclosure_config_id"];
