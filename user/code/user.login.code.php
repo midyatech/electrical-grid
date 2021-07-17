@@ -54,6 +54,7 @@ if(isset($_POST['username']) && $_POST['username']!='' && isset($_POST['password
 	} else {
 		$_SESSION['login_state']=$user->State;
 		$_SESSION['login_message']=$user->Message;
+		$user->SaveFailedLogin($username, $user->Message, $_SERVER['REMOTE_ADDR']);
 		header("Location: ../user_login.php");
 	}
 

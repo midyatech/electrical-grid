@@ -328,7 +328,7 @@ class User {
 
 					}else{
 						// wrong password
-						$this->AddFailedLogin($userId, $userInfo[0]['FAILED_ATTEMPT_NUM']);
+						$this->SaveAddFailedLogin($userId, $userInfo[0]['FAILED_ATTEMPT_NUM']);
 						$this->State = self::WARNING;
 						$this->Message = "user_wrong_pass";
 						//If number of failed login attempts is greater than allowed attempts (ALLOWED_ATTEMPTS constant) then lock the account
@@ -913,7 +913,7 @@ class User {
 		return true;
 	}
 
-	protected function AddFailedLogin($id, $attemptNum)
+	protected function SaveAddFailedLogin($id, $attemptNum)
 	{
 		if(!$this->Edit($id, NULL, NULL, NULL, NULL, NULL, $attemptNum+1)){
 			return false;
@@ -1048,6 +1048,16 @@ class User {
 
 		$allstatus = $this->db->SelectData($select, null, null, null, null, $count, 1);
 		return $allstatus;
+	}
+
+	public function SaveFailedLogin($username, $message, $ip)
+	{
+		$data = array();
+		$data["user_name"] = $username;
+		$data["error_message"] = $message;
+		$data["ip_address"] = $ip;
+		$data["timestamp"] = date('Y-m-d H:i:s');
+		return $this->db->Insert("failed_login", $data);
 	}
 	/*public function ValidateUser($user_id, $agent_id, $from_code, $allow_children = true){
 		$sql = "SELECT VALIDATE_USER(". $this->db->SqlVal($user_id,"int").",".
